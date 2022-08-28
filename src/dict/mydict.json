@@ -1,0 +1,9 @@
+{
+  "test": "ChatBot Works!",
+  "sample": "Hello, I'm sample ChatBot!",
+  "hello": "Hello, World!",
+  "おはよう": "おはようございます！",
+  "こんにちは": "こんにちは！",
+  "こんばんは": "こんばんは！",
+  "except": "すみません、よく分かりません..."
+}

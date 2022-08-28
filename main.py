@@ -11,6 +11,9 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 import os
+from src.services.handle_message_service import handle_message_service
+
+from src.services.handle_message_service import *
 
 app = Flask(__name__)
 
@@ -41,9 +44,11 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    # メッセージ処理のモジュールの呼び出し
+    reply = handle_message_service.generate_reply_message(event.message.text)
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=event.message.text))
+        TextSendMessage(text=reply))
 
 
 if __name__ == "__main__":
